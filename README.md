@@ -92,4 +92,4 @@ And that's all.
     
 # Thanks
 
-* [Leonardo Tartari](https://github.com/ltartari) for the Calendar icon.
+* [Leonardo Tartari](https://github.com/ltartari) for pointing me this [wonderfull icon set](http://www.iconsweets2.com).
