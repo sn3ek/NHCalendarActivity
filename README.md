@@ -16,7 +16,8 @@ First, create a NHCalendarEvent instance of an event:
         calendarEvent.location = @"The Shire";
         calendarEvent.notes = @"Bilbo's eleventy-first birthday.";
         calendarEvent.startDate = [NSDate dateWithTimeIntervalSinceNow:3600];
-        calendarEvent.endDate = [NSDate dateWithTimeInterval:3600 sinceDate:calendarEvent.startDate];
+        calendarEvent.endDate = [NSDate dateWithTimeInterval:3600
+                                                   sinceDate:calendarEvent.startDate];
         calendarEvent.allDay = NO;
         
         return calendarEvent;
@@ -27,15 +28,14 @@ Then, initalize the UIActivityViewController using both NHCalendarEvent and NHCa
     - (IBAction)openBtnTouched:(id)sender
     {
         NSString *msg = NSLocalizedString(@"NHCalendarActivity", nil);
-        NSURL* url = [NSURL URLWithString:@"http://github.com/otaviocc/NHCalendarActivity"];
-        NHCalendarEvent *calendarEvent = [self createCalendarEvent];
+        NSURL* url = [NSURL URLWithString:@"http://git.io/LV7YIQ"];
         
         NHCalendarActivity *calendarActivity = [[NHCalendarActivity alloc] init];
-        
         NSArray *activities = @[
             calendarActivity
         ];
         
+        NHCalendarEvent *calendarEvent = [self createCalendarEvent];
         NSArray *items = @[
             msg,
             url,
