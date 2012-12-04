@@ -6,59 +6,65 @@
 
 First, create a NHCalendarEvent instance of an event:
 
-    -(NHCalendarEvent *)createCalendarEvent
-    {
-        NHCalendarEvent *calendarEvent = [[NHCalendarEvent alloc] init];
-        
-        calendarEvent.title = @"Long-expected Party";
-        calendarEvent.location = @"The Shire";
-        calendarEvent.notes = @"Bilbo's eleventy-first birthday.";
-        calendarEvent.startDate = [NSDate dateWithTimeIntervalSinceNow:3600];
-        calendarEvent.endDate = [NSDate dateWithTimeInterval:3600
-                                                   sinceDate:calendarEvent.startDate];
-        calendarEvent.allDay = NO;
-        
-        return calendarEvent;
-    }
+```objective-c
+-(NHCalendarEvent *)createCalendarEvent
+{
+    NHCalendarEvent *calendarEvent = [[NHCalendarEvent alloc] init];
+    
+    calendarEvent.title = @"Long-expected Party";
+    calendarEvent.location = @"The Shire";
+    calendarEvent.notes = @"Bilbo's eleventy-first birthday.";
+    calendarEvent.startDate = [NSDate dateWithTimeIntervalSinceNow:3600];
+    calendarEvent.endDate = [NSDate dateWithTimeInterval:3600
+                                               sinceDate:calendarEvent.startDate];
+    calendarEvent.allDay = NO;
+    
+    return calendarEvent;
+}
+```
 
 Then, initalize the UIActivityViewController using both NHCalendarEvent and NHCalendarActivity:
 
-    - (IBAction)openBtnTouched:(id)sender
-    {
-        NSString *msg = NSLocalizedString(@"NHCalendarActivity", nil);
-        NSURL* url = [NSURL URLWithString:@"http://git.io/LV7YIQ"];
-        
-        NSArray *activities = @[
-            [[NHCalendarActivity alloc] init]
-        ];
-        
-        NSArray *items = @[
-            msg,
-            url,
-            [self createCalendarEvent]
-        ];
-        
-        UIActivityViewController* activity = [[UIActivityViewController alloc] initWithActivityItems:items
-                                                                               applicationActivities:activities];
-        
-        [self presentViewController:activity
-                           animated:YES
-                         completion:NULL];    
-    }
+```objective-c
+- (IBAction)openBtnTouched:(id)sender
+{
+    NSString *msg = NSLocalizedString(@"NHCalendarActivity", nil);
+    NSURL* url = [NSURL URLWithString:@"http://git.io/LV7YIQ"];
+    
+    NSArray *activities = @[
+        [[NHCalendarActivity alloc] init]
+    ];
+    
+    NSArray *items = @[
+        msg,
+        url,
+        [self createCalendarEvent]
+    ];
+    
+    UIActivityViewController* activity = [[UIActivityViewController alloc] initWithActivityItems:items
+                                                                           applicationActivities:activities];
+    
+    [self presentViewController:activity
+                       animated:YES
+                     completion:NULL];    
+}
+```
 
 There's also a NHCalendarActivityDelegate protocol, which can be used to perform additional actions:
 
-    #pragma mark - NHCalendarActivityDelegate
-    
-    -(void)calendarActivityDidFinish:(NHCalendarEvent *)event
-    {
-        NSLog(@"Event created from %@ to %@", event.startDate, event.endDate);
-    }
-    
-    -(void)calendarActivityDidFail:(NSError *)error
-    {
-        NSLog(@"Ops!");
-    }
+```objective-c
+#pragma mark - NHCalendarActivityDelegate
+
+-(void)calendarActivityDidFinish:(NHCalendarEvent *)event
+{
+    NSLog(@"Event created from %@ to %@", event.startDate, event.endDate);
+}
+
+-(void)calendarActivityDidFail:(NSError *)error
+{
+    NSLog(@"Ops!");
+}
+```
 
 And that's all.
 
