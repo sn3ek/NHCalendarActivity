@@ -109,13 +109,13 @@
                     if ([self.delegate respondsToSelector:@selector(calendarActivityDidFinish:)])
                         [self.delegate calendarActivityDidFinish:event];
                 } else {
-                    if ([self.delegate respondsToSelector:@selector(calendarActivityDidFail:)])
-                        [self.delegate calendarActivityDidFail:error];
+                    if ([self.delegate respondsToSelector:@selector(calendarActivityDidFail:withError:)])
+                        [self.delegate calendarActivityDidFail:event withError:error];
                 }
             }
         } else {
-            if ([self.delegate respondsToSelector:@selector(calendarActivityDidFail:)])
-                [self.delegate calendarActivityDidFail:kError];
+            if ([self.delegate respondsToSelector:@selector(calendarActivityDidFailWithError:)])
+                [self.delegate calendarActivityDidFailWithError:kError];
         }
     }];
     

@@ -78,7 +78,8 @@
     NSLog(@"Event created from %@ to %@", event.startDate, event.endDate);
 }
 
--(void)calendarActivityDidFail:(NSError *)error
+-(void)calendarActivityDidFail:(NHCalendarEvent *)event
+                     withError:(NSError *)error
 {
     NSLog(@"Ops!");
 }

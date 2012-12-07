@@ -32,7 +32,9 @@
 @protocol NHCalendarActivityDelegate <NSObject>
 @optional
 - (void)calendarActivityDidFinish:(NHCalendarEvent *)event;
-- (void)calendarActivityDidFail:(NSError *)error;
+- (void)calendarActivityDidFailWithError:(NSError *)error;
+- (void)calendarActivityDidFail:(NHCalendarEvent *)event
+                      withError:(NSError *)error;
 @end
 
 @interface NHCalendarActivity : UIActivity
