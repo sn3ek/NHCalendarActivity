@@ -60,7 +60,13 @@ There's also a NHCalendarActivityDelegate protocol, which can be used to perform
     NSLog(@"Event created from %@ to %@", event.startDate, event.endDate);
 }
 
--(void)calendarActivityDidFail:(NSError *)error
+-(void)calendarActivityDidFail:(NHCalendarEvent *)event
+                     withError:(NSError *)error
+{
+    NSLog(@"Ops!");
+}
+
+- (void)calendarActivityDidFailWithError:(NSError *)error
 {
     NSLog(@"Ops!");
 }
