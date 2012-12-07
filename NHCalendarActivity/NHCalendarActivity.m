@@ -28,10 +28,21 @@
 #import "NHCalendarActivity.h"
 
 @interface NHCalendarActivity ()
-@property (strong) NHCalendarEvent *event;
+@property (strong) NSMutableArray *events;
 @end
 
 @implementation NHCalendarActivity
+
+-(id)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.events = [NSMutableArray array];
+    }
+    
+    return self;
+}
 
 - (NSString *)activityType
 {
@@ -66,38 +77,41 @@
 {
     for (id item in activityItems)
         if ([item isKindOfClass:[NHCalendarEvent class]])
-            self.event = item;
+            [self.events addObject:item];
 }
 
 - (void)performActivity
 {
     EKEventStore *ekEventStore = [[EKEventStore alloc] init];
-
+    
     [ekEventStore requestAccessToEntityType:EKEntityTypeEvent
-                                 completion:^(BOOL granted, NSError *kError) {
+                                 completion:^(BOOL granted, NSError *kError)
+    {
         if (granted) {
-            EKEvent *ekEvent = [EKEvent eventWithEventStore:ekEventStore];
-            
-            ekEvent.title = self.event.title;
-            ekEvent.location = self.event.location;
-            ekEvent.notes = self.event.notes;
-            ekEvent.startDate = self.event.startDate;
-            ekEvent.endDate = self.event.endDate;
-            ekEvent.allDay = self.event.allDay;
-            
-            [ekEvent setCalendar:[ekEventStore defaultCalendarForNewEvents]];
-            
-            NSError *error = nil;
-            [ekEventStore saveEvent:ekEvent
-                               span:EKSpanThisEvent
-                              error:&error];
-            
-            if (error == nil) {
-                if ([self.delegate respondsToSelector:@selector(calendarActivityDidFinish:)])
-                    [self.delegate calendarActivityDidFinish:self.event];
-            } else {
-                if ([self.delegate respondsToSelector:@selector(calendarActivityDidFail:)])
-                    [self.delegate calendarActivityDidFail:error];
+            for (NHCalendarEvent *event in self.events) {
+                EKEvent *ekEvent = [EKEvent eventWithEventStore:ekEventStore];
+                
+                ekEvent.title = event.title;
+                ekEvent.location = event.location;
+                ekEvent.notes = event.notes;
+                ekEvent.startDate = event.startDate;
+                ekEvent.endDate = event.endDate;
+                ekEvent.allDay = event.allDay;
+                
+                [ekEvent setCalendar:[ekEventStore defaultCalendarForNewEvents]];
+                
+                NSError *error = nil;
+                [ekEventStore saveEvent:ekEvent
+                                   span:EKSpanThisEvent
+                                  error:&error];
+                
+                if (error == nil) {
+                    if ([self.delegate respondsToSelector:@selector(calendarActivityDidFinish:)])
+                        [self.delegate calendarActivityDidFinish:event];
+                } else {
+                    if ([self.delegate respondsToSelector:@selector(calendarActivityDidFail:)])
+                        [self.delegate calendarActivityDidFail:error];
+                }
             }
         } else {
             if ([self.delegate respondsToSelector:@selector(calendarActivityDidFail:)])
