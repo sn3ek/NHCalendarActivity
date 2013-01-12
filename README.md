@@ -76,7 +76,7 @@ And that's all.
 
 ## See it working
 
-![NHCalendarActivity](http://f.cl.ly/items/423f3J1C070F0f1P3R3p/iOS%20Simulator%20Screen%20shot%20Dec%201,%202012%204.10.03%20PM.png)
+![NHCalendarActivity](http://f.cl.ly/items/1e003C2b1n1m1t3v1C2d/iOS%20Simulator%20Screen%20shot%20Nov%2029,%202012%208.11.15%20PM.jpg)
 
 ## License
 
