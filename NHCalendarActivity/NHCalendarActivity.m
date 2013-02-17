@@ -56,7 +56,7 @@
 
 - (UIImage *)activityImage
 {
-    return [UIImage imageNamed:@"NHCalendarActivityIcon"];
+    return [UIImage imageNamed:@"NHCalendarActivity.bundle/NHCalendarActivityIcon"];
 }
 
 -(BOOL)canPerformWithActivityItems:(NSArray *)activityItems

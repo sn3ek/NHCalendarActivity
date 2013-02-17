@@ -21,10 +21,7 @@
 		EAA880EF166A745300FC5B03 /* NHCalendarActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880EB166A745300FC5B03 /* NHCalendarActivity.m */; };
 		EAA880F0166A745300FC5B03 /* NHCalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880ED166A745300FC5B03 /* NHCalendarEvent.m */; };
 		EAA880F6166A767600FC5B03 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880F5166A767600FC5B03 /* EventKit.framework */; };
-		EAA88103166A778500FC5B03 /* NHCalendarActivityIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA880FF166A778500FC5B03 /* NHCalendarActivityIcon.png */; };
-		EAA88104166A778500FC5B03 /* NHCalendarActivityIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA88100166A778500FC5B03 /* NHCalendarActivityIcon@2x.png */; };
-		EAA88105166A778500FC5B03 /* NHCalendarActivityIcon@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA88101166A778500FC5B03 /* NHCalendarActivityIcon@2x~ipad.png */; };
-		EAA88106166A778500FC5B03 /* NHCalendarActivityIcon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA88102166A778500FC5B03 /* NHCalendarActivityIcon~ipad.png */; };
+		EAAE12F916D198BC00A83F24 /* NHCalendarActivity.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EAAE12F816D198BC00A83F24 /* NHCalendarActivity.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,10 +46,7 @@
 		EAA880EC166A745300FC5B03 /* NHCalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHCalendarEvent.h; sourceTree = "<group>"; };
 		EAA880ED166A745300FC5B03 /* NHCalendarEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHCalendarEvent.m; sourceTree = "<group>"; };
 		EAA880F5166A767600FC5B03 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		EAA880FF166A778500FC5B03 /* NHCalendarActivityIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NHCalendarActivityIcon.png; sourceTree = "<group>"; };
-		EAA88100166A778500FC5B03 /* NHCalendarActivityIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NHCalendarActivityIcon@2x.png"; sourceTree = "<group>"; };
-		EAA88101166A778500FC5B03 /* NHCalendarActivityIcon@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NHCalendarActivityIcon@2x~ipad.png"; sourceTree = "<group>"; };
-		EAA88102166A778500FC5B03 /* NHCalendarActivityIcon~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NHCalendarActivityIcon~ipad.png"; sourceTree = "<group>"; };
+		EAAE12F816D198BC00A83F24 /* NHCalendarActivity.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NHCalendarActivity.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,21 +127,10 @@
 				EAA880EB166A745300FC5B03 /* NHCalendarActivity.m */,
 				EAA880EC166A745300FC5B03 /* NHCalendarEvent.h */,
 				EAA880ED166A745300FC5B03 /* NHCalendarEvent.m */,
-				EAA88107166A77A400FC5B03 /* Images */,
+				EAAE12F816D198BC00A83F24 /* NHCalendarActivity.bundle */,
 			);
 			name = NHCalendarActivity;
 			path = ../NHCalendarActivity;
-			sourceTree = "<group>";
-		};
-		EAA88107166A77A400FC5B03 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				EAA880FF166A778500FC5B03 /* NHCalendarActivityIcon.png */,
-				EAA88100166A778500FC5B03 /* NHCalendarActivityIcon@2x.png */,
-				EAA88101166A778500FC5B03 /* NHCalendarActivityIcon@2x~ipad.png */,
-				EAA88102166A778500FC5B03 /* NHCalendarActivityIcon~ipad.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,10 +190,7 @@
 				EAA880DA166A743100FC5B03 /* Default@2x.png in Resources */,
 				EAA880DC166A743100FC5B03 /* Default-568h@2x.png in Resources */,
 				EAA880E2166A743100FC5B03 /* DemoViewController.xib in Resources */,
-				EAA88103166A778500FC5B03 /* NHCalendarActivityIcon.png in Resources */,
-				EAA88104166A778500FC5B03 /* NHCalendarActivityIcon@2x.png in Resources */,
-				EAA88105166A778500FC5B03 /* NHCalendarActivityIcon@2x~ipad.png in Resources */,
-				EAA88106166A778500FC5B03 /* NHCalendarActivityIcon~ipad.png in Resources */,
+				EAAE12F916D198BC00A83F24 /* NHCalendarActivity.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +322,7 @@
 				EAA880E7166A743100FC5B03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
