@@ -67,6 +67,7 @@
     calendarEvent.startDate = [NSDate dateWithTimeIntervalSinceNow:3600];
     calendarEvent.endDate = [NSDate dateWithTimeInterval:3600 sinceDate:calendarEvent.startDate];
     calendarEvent.allDay = NO;
+    calendarEvent.URL = [NSURL URLWithString:@"http://github.com/otaviocc/NHCalendarActivity"];
     
     return calendarEvent;
 }

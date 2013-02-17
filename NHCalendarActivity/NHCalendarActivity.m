@@ -101,6 +101,8 @@
                 ekEvent.startDate = event.startDate;
                 ekEvent.endDate = event.endDate;
                 ekEvent.allDay = event.allDay;
+                ekEvent.timeZone = event.timeZone;
+                ekEvent.URL = event.URL;
                 
                 [ekEvent setCalendar:[ekEventStore defaultCalendarForNewEvents]];
                 
