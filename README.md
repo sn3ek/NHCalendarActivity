@@ -18,6 +18,13 @@ First, create a NHCalendarEvent instance of an event:
     calendarEvent.endDate = [NSDate dateWithTimeInterval:3600
                                                sinceDate:calendarEvent.startDate];
     calendarEvent.allDay = NO;
+
+    // Add alarm
+    NSArray *alarms = @[
+        [EKAlarm alarmWithRelativeOffset:- 60.0f * 60.0f * 24],  // 1 day before
+        [EKAlarm alarmWithRelativeOffset:- 60.0f * 15.0f]        // 15 minutes before
+    ];
+    calendarEvent.alarms = alarms;
     
     return calendarEvent;
 }
