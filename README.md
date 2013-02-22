@@ -1,10 +1,10 @@
 # NHCalendarActivity
 
-**NHCalendarActivity** is an easy to use custom UIActivity (iOS 6) that adds events to the iOS calendar.
+**NHCalendarActivity** is an easy to use custom UIActivity (iOS 6) that adds events and alarms to the iOS calendar.
 
 ## How to use it
 
-First, create a NHCalendarEvent instance of an event:
+First, create a NHCalendarEvent instance of an event (note that you can include alarms):
 
 ```objective-c
 -(NHCalendarEvent *)createCalendarEvent
@@ -30,7 +30,7 @@ First, create a NHCalendarEvent instance of an event:
 }
 ```
 
-Then, initalize the UIActivityViewController using both NHCalendarEvent and NHCalendarActivity:
+Then, initialize the UIActivityViewController using both NHCalendarEvent and NHCalendarActivity:
 
 ```objective-c
 - (IBAction)openBtnTouched:(id)sender
