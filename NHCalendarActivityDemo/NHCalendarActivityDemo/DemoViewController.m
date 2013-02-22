@@ -69,6 +69,13 @@
     calendarEvent.allDay = NO;
     calendarEvent.URL = [NSURL URLWithString:@"http://github.com/otaviocc/NHCalendarActivity"];
     
+    // Add alarm
+    NSArray *alarms = @[
+        [EKAlarm alarmWithRelativeOffset:- 60.0f * 60.0f * 24],  // 1 day before
+        [EKAlarm alarmWithRelativeOffset:- 60.0f * 15.0f]        // 15 minutes before
+    ];
+    calendarEvent.alarms = alarms;
+    
     return calendarEvent;
 }
 

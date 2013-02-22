@@ -104,6 +104,10 @@
                 ekEvent.timeZone = event.timeZone;
                 ekEvent.URL = event.URL;
                 
+                for (id alarm in event.alarms)
+                    if ([alarm isKindOfClass:[EKAlarm class]])
+                        [ekEvent addAlarm:alarm];
+                
                 [ekEvent setCalendar:[ekEventStore defaultCalendarForNewEvents]];
                 
                 NSError *error = nil;

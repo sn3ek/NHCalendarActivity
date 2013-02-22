@@ -34,8 +34,9 @@
 @property (strong) NSString *notes;
 @property (strong) NSDate *startDate;
 @property (strong) NSDate *endDate;
-@property (strong) NSTimeZone* timeZone;
-@property (strong) NSURL* URL;
+@property (strong) NSTimeZone *timeZone;
+@property (strong) NSURL*URL;
+@property (strong) NSArray *alarms;
 
 @property (assign) BOOL allDay;
 
