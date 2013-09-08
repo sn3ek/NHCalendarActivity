@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA40028717D2573F00DAC6BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C5166A743100FC5B03 /* UIKit.framework */; };
+		EA40028817D2573F00DAC6BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C7166A743100FC5B03 /* Foundation.framework */; };
+		EA40028917D2573F00DAC6BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C9166A743100FC5B03 /* CoreGraphics.framework */; };
+		EA40028F17D2573F00DAC6BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA40028D17D2573F00DAC6BB /* InfoPlist.strings */; };
+		EA40029117D2573F00DAC6BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA40029017D2573F00DAC6BB /* main.m */; };
+		EA40029517D2574000DAC6BB /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA40029417D2574000DAC6BB /* Cedar-iOS.framework */; };
+		EA40029C17D257FA00DAC6BB /* DemoViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA40029B17D257FA00DAC6BB /* DemoViewControllerSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA40029D17D2592800DAC6BB /* NHCalendarActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880EB166A745300FC5B03 /* NHCalendarActivity.m */; };
+		EA40029E17D2592800DAC6BB /* NHCalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880ED166A745300FC5B03 /* NHCalendarEvent.m */; };
+		EA40029F17D2592800DAC6BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880D5166A743100FC5B03 /* AppDelegate.m */; };
+		EA4002A017D2592800DAC6BB /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880DE166A743100FC5B03 /* DemoViewController.m */; };
+		EA4002A117D2594300DAC6BB /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880F5166A767600FC5B03 /* EventKit.framework */; };
 		EAA880C6166A743100FC5B03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C5166A743100FC5B03 /* UIKit.framework */; };
 		EAA880C8166A743100FC5B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C7166A743100FC5B03 /* Foundation.framework */; };
 		EAA880CA166A743100FC5B03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C9166A743100FC5B03 /* CoreGraphics.framework */; };
@@ -25,6 +37,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA40028617D2573F00DAC6BB /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA40028C17D2573F00DAC6BB /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
+		EA40028E17D2573F00DAC6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA40029017D2573F00DAC6BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA40029217D2573F00DAC6BB /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		EA40029317D2573F00DAC6BB /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		EA40029417D2574000DAC6BB /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cedar-iOS.framework"; path = "Frameworks/Cedar-iOS.framework"; sourceTree = "<group>"; };
+		EA40029B17D257FA00DAC6BB /* DemoViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DemoViewControllerSpec.mm; sourceTree = "<group>"; };
 		EAA880C1166A743100FC5B03 /* NHCalendarActivityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NHCalendarActivityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA880C5166A743100FC5B03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAA880C7166A743100FC5B03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,6 +70,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EA40028317D2573F00DAC6BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4002A117D2594300DAC6BB /* EventKit.framework in Frameworks */,
+				EA40028717D2573F00DAC6BB /* UIKit.framework in Frameworks */,
+				EA40028817D2573F00DAC6BB /* Foundation.framework in Frameworks */,
+				EA40028917D2573F00DAC6BB /* CoreGraphics.framework in Frameworks */,
+				EA40029517D2574000DAC6BB /* Cedar-iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAA880BE166A743100FC5B03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,11 +96,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA40028A17D2573F00DAC6BB /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				EA40029317D2573F00DAC6BB /* Rakefile */,
+				EA40029417D2574000DAC6BB /* Cedar-iOS.framework */,
+				EA40028B17D2573F00DAC6BB /* Supporting Files */,
+				EA40029B17D257FA00DAC6BB /* DemoViewControllerSpec.mm */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		EA40028B17D2573F00DAC6BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA40028C17D2573F00DAC6BB /* Specs-Info.plist */,
+				EA40028D17D2573F00DAC6BB /* InfoPlist.strings */,
+				EA40029017D2573F00DAC6BB /* main.m */,
+				EA40029217D2573F00DAC6BB /* Specs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EAA880B6166A743100FC5B03 = {
 			isa = PBXGroup;
 			children = (
 				EAA880E8166A745300FC5B03 /* NHCalendarActivity */,
 				EAA880CB166A743100FC5B03 /* NHCalendarActivityDemo */,
+				EA40028A17D2573F00DAC6BB /* Specs */,
 				EAA880C4166A743100FC5B03 /* Frameworks */,
 				EAA880C2166A743100FC5B03 /* Products */,
 			);
@@ -78,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				EAA880C1166A743100FC5B03 /* NHCalendarActivityDemo.app */,
+				EA40028617D2573F00DAC6BB /* Specs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +192,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EA40028517D2573F00DAC6BB /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA40029A17D2574000DAC6BB /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				EA40028217D2573F00DAC6BB /* Sources */,
+				EA40028317D2573F00DAC6BB /* Frameworks */,
+				EA40028417D2573F00DAC6BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = EA40028617D2573F00DAC6BB /* Specs.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EAA880C0166A743100FC5B03 /* NHCalendarActivityDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAA880E5166A743100FC5B03 /* Build configuration list for PBXNativeTarget "NHCalendarActivityDemo" */;
@@ -176,11 +249,20 @@
 			projectRoot = "";
 			targets = (
 				EAA880C0166A743100FC5B03 /* NHCalendarActivityDemo */,
+				EA40028517D2573F00DAC6BB /* Specs */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EA40028417D2573F00DAC6BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA40028F17D2573F00DAC6BB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAA880BF166A743100FC5B03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +279,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EA40028217D2573F00DAC6BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA40029117D2573F00DAC6BB /* main.m in Sources */,
+				EA40029C17D257FA00DAC6BB /* DemoViewControllerSpec.mm in Sources */,
+				EA40029D17D2592800DAC6BB /* NHCalendarActivity.m in Sources */,
+				EA40029E17D2592800DAC6BB /* NHCalendarEvent.m in Sources */,
+				EA40029F17D2592800DAC6BB /* AppDelegate.m in Sources */,
+				EA4002A017D2592800DAC6BB /* DemoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAA880BD166A743100FC5B03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,6 +307,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		EA40028D17D2573F00DAC6BB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA40028E17D2573F00DAC6BB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		EAA880CE166A743100FC5B03 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -231,6 +334,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EA40029817D2574000DAC6BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Specs/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA40029917D2574000DAC6BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Specs/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		EAA880E3166A743100FC5B03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,6 +462,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EA40029A17D2574000DAC6BB /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA40029817D2574000DAC6BB /* Debug */,
+				EA40029917D2574000DAC6BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		EAA880BB166A743100FC5B03 /* Build configuration list for PBXProject "NHCalendarActivityDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
