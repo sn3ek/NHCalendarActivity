@@ -1,4 +1,4 @@
-#import <objc/runtime.h>
+#import <Swizzlean/Swizzlean.h>
 #import "DemoViewController.h"
 
 using namespace Cedar::Matchers;
@@ -7,10 +7,9 @@ using namespace Cedar::Doubles;
 #define kCalendarComponents (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)
 
 @interface DemoViewController (Spec)
-
+@property (strong, nonatomic) UIActivityViewController *activity;
 - (IBAction)openBtnTouched:(id)sender;
--(NHCalendarEvent *)createCalendarEvent;
-
+- (NHCalendarEvent *)createCalendarEvent;
 @end
 
 SPEC_BEGIN(DemoViewControllerSpec)
@@ -24,33 +23,28 @@ describe(@"DemoViewController", ^{
     
     context(@"#openBtnTouched:", ^{
         context(@"UIActivityViewController", ^{
-            __block IMP origImpl;
-            __block Method origMethod;
             __block BOOL methodHasBeenCalled;
-            
             __block BOOL animated;
-            __block id viewController;
+            __block UIActivityViewController *viewController;
+            __block Swizzlean *demoViewSwizz;
             
             beforeEach(^{
                 methodHasBeenCalled = NO;
                 animated = NO;
                 
-                origMethod = class_getInstanceMethod([UIViewController class], @selector(presentViewController:animated:completion:));
-                
-                IMP mockBlock = imp_implementationWithBlock(^(id _self, id view, BOOL anim, id completion) {
-                    methodHasBeenCalled = YES;
-                    
-                    viewController = view;
-                    animated = anim;
-                });
-                
-                origImpl = method_setImplementation(origMethod, mockBlock);
+                demoViewSwizz = [[Swizzlean alloc] initWithClassToSwizzle:[DemoViewController class]];
+                [demoViewSwizz swizzleInstanceMethod:@selector(presentViewController:animated:completion:)
+                       withReplacementImplementation:^(id _self, UIActivityViewController *view, BOOL anim, id completion) {
+                           methodHasBeenCalled = YES;
+                           viewController = view;
+                           animated = anim;
+                }];
                 
                 [controller openBtnTouched:nil];
             });
             
             afterEach(^{
-                method_setImplementation(origMethod, origImpl);
+                [demoViewSwizz resetSwizzledInstanceMethod];
             });
             
             it(@"should have been called", ^{
@@ -61,25 +55,20 @@ describe(@"DemoViewController", ^{
                 animated should be_truthy;
             });
             
-            it(@"should display a proper viewController", ^{
-                viewController should be_instance_of([UIActivityViewController class]);
+            it(@"viewController has proper type", ^{
+                controller.activity should be_instance_of([UIActivityViewController class]);
             });
             
-            context(@"activities", ^{
-                __block UIActivityViewController *activity;
-                
-                beforeEach(^{
-                    activity = viewController;
-                });
-                
-                it(@"should exclude four activities", ^{
-                    activity.excludedActivityTypes.count should equal(4);
-                    
-                    activity.excludedActivityTypes should contain(UIActivityTypePostToWeibo);
-                    activity.excludedActivityTypes should contain(UIActivityTypePrint);
-                    activity.excludedActivityTypes should contain(UIActivityTypeSaveToCameraRoll);
-                    activity.excludedActivityTypes should contain(UIActivityTypeAssignToContact);
-                });
+            it(@"should display a proper viewController", ^{
+                viewController should equal(controller.activity);
+            });
+            
+            it(@"should exclude four activities", ^{
+                controller.activity.excludedActivityTypes.count should equal(4);
+                controller.activity.excludedActivityTypes should contain(UIActivityTypePostToWeibo);
+                controller.activity.excludedActivityTypes should contain(UIActivityTypePrint);
+                controller.activity.excludedActivityTypes should contain(UIActivityTypeSaveToCameraRoll);
+                controller.activity.excludedActivityTypes should contain(UIActivityTypeAssignToContact);
             });
         });
     });

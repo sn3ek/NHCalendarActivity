@@ -27,6 +27,10 @@
 
 #import "DemoViewController.h"
 
+@interface DemoViewController ()
+@property (strong, nonatomic) UIActivityViewController *activity;
+@end
+
 @implementation DemoViewController
 
 - (IBAction)openBtnTouched:(id)sender
@@ -38,21 +42,19 @@
     NHCalendarActivity *calendarActivity = [[NHCalendarActivity alloc] init];
     calendarActivity.delegate = self;
     
-    NSArray *activities = @[
-        calendarActivity
-    ];
+    NSArray *activities = @[calendarActivity];
     
-    UIActivityViewController* activity = [[UIActivityViewController alloc] initWithActivityItems:@[msg, url, calendarEvent]
-                                                                           applicationActivities:activities];
+    self.activity = [[UIActivityViewController alloc] initWithActivityItems:@[msg, url, calendarEvent]
+                                                      applicationActivities:activities];
     
-    activity.excludedActivityTypes = @[
-        UIActivityTypePostToWeibo,
-        UIActivityTypePrint,
-        UIActivityTypeSaveToCameraRoll,
-        UIActivityTypeAssignToContact
-    ];
+    self.activity.excludedActivityTypes = @[
+                                            UIActivityTypePostToWeibo,
+                                            UIActivityTypePrint,
+                                            UIActivityTypeSaveToCameraRoll,
+                                            UIActivityTypeAssignToContact
+                                            ];
     
-    [self presentViewController:activity
+    [self presentViewController:self.activity
                        animated:YES
                      completion:NULL];    
 }
