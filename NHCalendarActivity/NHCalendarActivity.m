@@ -63,10 +63,6 @@
 {
     EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
     
-    /*
-     * "Save to Calendar" will only be displayed if the authorization status is
-     * either not determined or authorized. There's no reason to display it otherwise.
-     */
     for (id item in activityItems) {
         if ([item isKindOfClass:[NHCalendarEvent class]] &&
             (status == EKAuthorizationStatusNotDetermined || status == EKAuthorizationStatusAuthorized)) {

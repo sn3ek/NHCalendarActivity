@@ -20,6 +20,8 @@
 		EA4002A017D2592800DAC6BB /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880DE166A743100FC5B03 /* DemoViewController.m */; };
 		EA4002A117D2594300DAC6BB /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880F5166A767600FC5B03 /* EventKit.framework */; };
 		EA5AAAE31841A74400DE911B /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA880E0166A743100FC5B03 /* DemoViewController.xib */; };
+		EA913F4F185E427F006276D4 /* NHCalendarActivitySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA913F4E185E427F006276D4 /* NHCalendarActivitySpec.mm */; };
+		EA913F50185E471E006276D4 /* NHCalendarActivity.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EAAE12F816D198BC00A83F24 /* NHCalendarActivity.bundle */; };
 		EA9512DB1843F61300B4A450 /* NHCalendarEventSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA9512DA1843F61300B4A450 /* NHCalendarEventSpec.mm */; };
 		EAA880C6166A743100FC5B03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C5166A743100FC5B03 /* UIKit.framework */; };
 		EAA880C8166A743100FC5B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C7166A743100FC5B03 /* Foundation.framework */; };
@@ -48,6 +50,7 @@
 		EA40029217D2573F00DAC6BB /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		EA40029317D2573F00DAC6BB /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		EA40029B17D257FA00DAC6BB /* DemoViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DemoViewControllerSpec.mm; sourceTree = "<group>"; };
+		EA913F4E185E427F006276D4 /* NHCalendarActivitySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NHCalendarActivitySpec.mm; sourceTree = "<group>"; };
 		EA9512DA1843F61300B4A450 /* NHCalendarEventSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NHCalendarEventSpec.mm; sourceTree = "<group>"; };
 		EAA880C1166A743100FC5B03 /* NHCalendarActivityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NHCalendarActivityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA880C5166A743100FC5B03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -133,6 +136,7 @@
 		EA9512DC1843F61B00B4A450 /* NHCalendarActivity */ = {
 			isa = PBXGroup;
 			children = (
+				EA913F4E185E427F006276D4 /* NHCalendarActivitySpec.mm */,
 				EA9512DA1843F61300B4A450 /* NHCalendarEventSpec.mm */,
 			);
 			name = NHCalendarActivity;
@@ -285,6 +289,7 @@
 			files = (
 				EA40028F17D2573F00DAC6BB /* InfoPlist.strings in Resources */,
 				EA5AAAE31841A74400DE911B /* DemoViewController.xib in Resources */,
+				EA913F50185E471E006276D4 /* NHCalendarActivity.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA9512DB1843F61300B4A450 /* NHCalendarEventSpec.mm in Sources */,
+				EA913F4F185E427F006276D4 /* NHCalendarActivitySpec.mm in Sources */,
 				EA40029117D2573F00DAC6BB /* main.m in Sources */,
 				EA40029C17D257FA00DAC6BB /* DemoViewControllerSpec.mm in Sources */,
 				EA40029D17D2592800DAC6BB /* NHCalendarActivity.m in Sources */,
