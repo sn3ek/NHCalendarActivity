@@ -13,7 +13,7 @@
 		EA40028917D2573F00DAC6BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C9166A743100FC5B03 /* CoreGraphics.framework */; };
 		EA40028F17D2573F00DAC6BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA40028D17D2573F00DAC6BB /* InfoPlist.strings */; };
 		EA40029117D2573F00DAC6BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA40029017D2573F00DAC6BB /* main.m */; };
-		EA40029C17D257FA00DAC6BB /* DemoViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA40029B17D257FA00DAC6BB /* DemoViewControllerSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA40029C17D257FA00DAC6BB /* DemoViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA40029B17D257FA00DAC6BB /* DemoViewControllerSpec.mm */; };
 		EA40029D17D2592800DAC6BB /* NHCalendarActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880EB166A745300FC5B03 /* NHCalendarActivity.m */; };
 		EA40029E17D2592800DAC6BB /* NHCalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880ED166A745300FC5B03 /* NHCalendarEvent.m */; };
 		EA40029F17D2592800DAC6BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA880D5166A743100FC5B03 /* AppDelegate.m */; };
@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				EA9512DC1843F61B00B4A450 /* NHCalendarActivity */,
-				EA40028B17D2573F00DAC6BB /* Supporting Files */,
 				EA5AAAE01841A28000DE911B /* NHCalendarActivityDemo */,
+				EA40028B17D2573F00DAC6BB /* Supporting Files */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
