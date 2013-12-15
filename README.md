@@ -1,8 +1,21 @@
 # NHCalendarActivity
 
-**NHCalendarActivity** is an easy to use custom UIActivity (iOS 6) that adds events and alarms to the iOS calendar.
+**NHCalendarActivity** is an easy to use custom UIActivity (iOS 6+) that adds events and alarms to the iOS calendar.
 
-## How to use it
+## How to install it?
+
+[CocoaPods](http://cocoapods.org) is the easiest way to install NHCalendarActivity. Run ```pod search NHCalendarActivity``` to search for the latest version.
+
+Then, copy and past the ```pod``` line to your ```Podfile```. Your podfile shall look like this:
+
+```
+platform :ios, '6.0'
+pod 'NHCalendarActivity', '~> 0.0.1'
+```
+
+Finally, install it running ```pod install```.
+
+## How to use it?
 
 First, create a NHCalendarEvent instance of an event (note that you can include alarms):
 
