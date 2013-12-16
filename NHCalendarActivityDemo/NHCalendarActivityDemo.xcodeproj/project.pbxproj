@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C94B70F55297456DAD372263 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7577F3B104984E99B17CBB5E /* libPods-Specs.a */; };
+		EA19D231185E8385000F1199 /* NHCalendarEventFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA19D230185E8385000F1199 /* NHCalendarEventFixture.m */; };
 		EA40028717D2573F00DAC6BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C5166A743100FC5B03 /* UIKit.framework */; };
 		EA40028817D2573F00DAC6BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C7166A743100FC5B03 /* Foundation.framework */; };
 		EA40028917D2573F00DAC6BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA880C9166A743100FC5B03 /* CoreGraphics.framework */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		7577F3B104984E99B17CBB5E /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EC04608AF3446EA7FBBDCD /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = "<group>"; };
+		EA19D22F185E8385000F1199 /* NHCalendarEventFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHCalendarEventFixture.h; sourceTree = "<group>"; };
+		EA19D230185E8385000F1199 /* NHCalendarEventFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHCalendarEventFixture.m; sourceTree = "<group>"; };
 		EA40028617D2573F00DAC6BB /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA40028C17D2573F00DAC6BB /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		EA40028E17D2573F00DAC6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 			children = (
 				EA913F4E185E427F006276D4 /* NHCalendarActivitySpec.mm */,
 				EA9512DA1843F61300B4A450 /* NHCalendarEventSpec.mm */,
+				EA19D22F185E8385000F1199 /* NHCalendarEventFixture.h */,
+				EA19D230185E8385000F1199 /* NHCalendarEventFixture.m */,
 			);
 			name = NHCalendarActivity;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				EA40029E17D2592800DAC6BB /* NHCalendarEvent.m in Sources */,
 				EA40029F17D2592800DAC6BB /* AppDelegate.m in Sources */,
 				EA4002A017D2592800DAC6BB /* DemoViewController.m in Sources */,
+				EA19D231185E8385000F1199 /* NHCalendarEventFixture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

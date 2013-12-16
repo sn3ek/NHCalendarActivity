@@ -1,5 +1,6 @@
 #import <Swizzlean/Swizzlean.h>
 #import "NHCalendarActivity.h"
+#import "NHCalendarEventFixture.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -170,8 +171,141 @@ describe(@"NHCalendarActivity", ^{
                 completionPassed(NO, fakeError);
             });
             
-            it(@"has called delegate selector", ^{
+            it(@"has called delegate selector calendarActivityDidFailWithError:", ^{
                 activity.delegate should have_received(@selector(calendarActivityDidFailWithError:)).with(fakeError);
+            });
+        });
+        
+        context(@"request access granted", ^{
+            __block NHCalendarEvent *event;
+            __block NSArray *items;
+            __block Swizzlean *saveEventSwizz;
+            
+            __block EKEvent *passedEvent;
+            __block EKSpan passedSpan;
+            __block NSError *fakeError;
+            
+            __block Swizzlean *setCalendarSwizz;
+            __block EKCalendar *passedCalendar;
+            __block EKEventStore *eventStore;
+            
+            __block Swizzlean *defaultCalendarSwizz;
+            __block EKCalendar *fakeCalendar;
+            
+            beforeEach(^{
+                event = [NHCalendarEventFixture event];
+                items = @[event];
+                [activity prepareWithActivityItems:items];
+                
+                fakeError = nil;
+                saveEventSwizz = [[Swizzlean alloc] initWithClassToSwizzle:[EKEventStore class]];
+                [saveEventSwizz swizzleInstanceMethod:@selector(saveEvent:span:error:)
+                        withReplacementImplementation:^(id _self, EKEvent *event, EKSpan span, NSError **error) {
+                            passedEvent = event;
+                            passedSpan = span;
+                            *error = fakeError;
+                }];
+                
+                eventStore = [[EKEventStore alloc] init];
+                setCalendarSwizz = [[Swizzlean alloc] initWithClassToSwizzle:[EKEvent class]];
+                [setCalendarSwizz swizzleInstanceMethod:@selector(setCalendar:) withReplacementImplementation:^(id _self, EKCalendar *calendar) {
+                    passedCalendar = calendar;
+                }];
+                
+                fakeCalendar = nice_fake_for([EKCalendar class]);
+                defaultCalendarSwizz = [[Swizzlean alloc] initWithClassToSwizzle:[EKEventStore class]];
+                [defaultCalendarSwizz swizzleInstanceMethod:@selector(defaultCalendarForNewEvents) withReplacementImplementation:^(id _self) {
+                    return fakeCalendar;
+                }];
+            });
+
+            afterEach(^{
+                [saveEventSwizz resetSwizzledInstanceMethod];
+                [setCalendarSwizz resetSwizzledInstanceMethod];
+                [defaultCalendarSwizz resetSwizzledInstanceMethod];
+            });
+            
+            context(@"doesn't have error while saving", ^{
+                beforeEach(^{
+                    fakeError = nil;
+                    completionPassed(YES, nil);
+                });
+
+                it(@"has proper EKSpan", ^{
+                    passedSpan should equal(EKSpanThisEvent);
+                });
+                
+                it(@"has called delegate selector calendarActivityDidFinish:", ^{
+                    activity.delegate should have_received(@selector(calendarActivityDidFinish:)).with(event);
+                });
+                
+                it(@"uses the default calendar for events", ^{
+                    passedCalendar should equal(fakeCalendar);
+                });
+                
+                describe(@"EKEvent", ^{
+                    __block NSDateFormatter *formatter;
+                    
+                    beforeEach(^{
+                        [formatter setDateFormat:@"HH:mm:ss"];
+                        formatter = [[NSDateFormatter alloc] init];
+                    });
+                    
+                    it(@"has proper title", ^{
+                        passedEvent.title should equal(event.title);
+                    });
+                    
+                    it(@"has proper location", ^{
+                        passedEvent.location should equal(event.location);
+                    });
+
+                    it(@"has proper notes", ^{
+                        passedEvent.notes should equal(event.notes);
+                    });
+                    
+                    it(@"has proper start date", ^{
+                        NSString *expectedDateString = [formatter stringFromDate:event.startDate];
+                        NSString *realDateString = [formatter stringFromDate:passedEvent.startDate];
+                        
+                        realDateString should equal(expectedDateString);
+                    });
+                    
+                    it(@"has proper end date", ^{
+                        NSString *expectedDateString = [formatter stringFromDate:event.endDate];
+                        NSString *realDateString = [formatter stringFromDate:passedEvent.endDate];
+                        
+                        realDateString should equal(expectedDateString);
+                    });
+                    
+                    it(@"has proper all day flag", ^{
+                        passedEvent.allDay should equal(event.allDay);
+                    });
+                    
+                    it(@"has proper time zone", ^{
+                        passedEvent.timeZone should equal(event.timeZone);
+                    });
+                    
+                    it(@"has proper URL", ^{
+                        passedEvent.URL should equal(event.URL);
+                    });
+                    
+                    describe(@"alarms", ^{
+                        it(@"has two alarms", ^{
+                            passedEvent.alarms.count should equal(2);
+                        });
+                    });
+                });
+            });
+            
+            context(@"does have error while saving", ^{
+                beforeEach(^{
+                    fakeError = nice_fake_for([NSError class]);
+                    completionPassed(YES, nil);
+                });
+                
+                it(@"has called delegate selector calendarActivityDidFinish:", ^{
+                    activity.delegate should have_received(@selector(calendarActivityDidFail:withError:));
+                });
             });
         });
     });
