@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   
   s.author        = { "Otavio Cordeiro" => "contact@otaviocc.com" }
   s.source        = { :git => "https://github.com/otaviocc/NHCalendarActivity.git", :tag => s.version.to_s }
-  s.license       = { :type => 'MIT' }
+  s.license       = { :type => 'MIT', :file => 'LICENSE' }
   
   s.source_files  = 'NHCalendarActivity'
   s.resource      = "NHCalendarActivity/NHCalendarActivity.bundle"
