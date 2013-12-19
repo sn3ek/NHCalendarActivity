@@ -38,5 +38,8 @@
 @end
 
 @interface NHCalendarActivity : UIActivity
+
 @property (assign) id<NHCalendarActivityDelegate> delegate;
+@property (nonatomic, strong) UIImage *activityImage;
+
 @end

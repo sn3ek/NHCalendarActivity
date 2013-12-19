@@ -41,10 +41,28 @@ describe(@"NHCalendarActivity", ^{
     });
     
     describe(@"#activityImage", ^{
-        it(@"returns proper activity image", ^{
-            UIImage *expectedImage = [UIImage imageNamed:@"NHCalendarActivity.bundle/NHCalendarActivityIcon"];
-            UIImage *image = [activity activityImage];
-            image should equal(expectedImage);
+        __block UIImage *image;
+
+        context(@"user defined image", ^{
+            beforeEach(^{
+                activity.activityImage = nil;
+            });
+            
+            it(@"returns proper activity image", ^{
+                activity.activityImage should be_nil;
+            });
+        });
+        
+        context(@"default image", ^{
+            beforeEach(^{
+                image = [UIImage imageNamed:@"NHCalendarActivity.bundle/NHCalendarActivityIcon"];
+            });
+
+            it(@"returns proper activity image", ^{
+                UIImage *expectedImage = [UIImage imageNamed:@"NHCalendarActivity.bundle/NHCalendarActivityIcon"];
+                UIImage *image = activity.activityImage;
+                image should equal(expectedImage);
+            });
         });
     });
     
