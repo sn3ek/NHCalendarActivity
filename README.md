@@ -11,7 +11,7 @@ platform :ios, '6.0'
 pod 'NHCalendarActivity', '~> 0.0.1'
 ```
 
-Finally, install it running ```pod install```.
+Finally, install it by running ```pod install```.
 
 ## How to use it?
 
