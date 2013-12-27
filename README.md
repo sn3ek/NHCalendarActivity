@@ -4,9 +4,7 @@
 
 ## How to install it?
 
-[CocoaPods](http://cocoapods.org) is the easiest way to install NHCalendarActivity. Run ```pod search NHCalendarActivity``` to search for the latest version.
-
-Then, copy and past the ```pod``` line to your ```Podfile```. Your podfile shall look like this:
+[CocoaPods](http://cocoapods.org) is the easiest way to install NHCalendarActivity. Run ```pod search NHCalendarActivity``` to search for the latest version. Then, copy and paste the ```pod``` line to your ```Podfile```. Your podfile should look like:
 
 ```
 platform :ios, '6.0'
@@ -97,6 +95,13 @@ And that's all.
 ## See it working
 
 ![NHCalendarActivity](http://f.cl.ly/items/1e003C2b1n1m1t3v1C2d/iOS%20Simulator%20Screen%20shot%20Nov%2029,%202012%208.11.15%20PM.jpg)
+
+## How to contribute?
+
+1. Fork and clone this project.
+2. Make your changes (and add/modify specs for your changes)
+3. Make sure all the specs are OK
+4. Push to your fork and do a Pull Request.
 
 ## License
 
