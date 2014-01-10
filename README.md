@@ -1,4 +1,4 @@
-# NHCalendarActivity [![Cocoapods](https://cocoapod-badges.herokuapp.com/v/NHCalendarActivity/badge.png)](http://beta.cocoapods.org/?q=name%3ANHCalendarActivity%2A) [![Cocoapods](https://cocoapod-badges.herokuapp.com/p/NHCalendarActivity/badge.png)](http://beta.cocoapods.org/?q=name%3ANHCalendarActivity%2A)
+# NHCalendarActivity [![Cocoapods](https://cocoapod-badges.herokuapp.com/v/NHCalendarActivity/badge.png)](http://cocoapods.org/?q=name%3ANHCalendarActivity%2A) [![Cocoapods](https://cocoapod-badges.herokuapp.com/p/NHCalendarActivity/badge.png)](http://cocoapods.org/?q=name%3ANHCalendarActivity%2A)
 
 **NHCalendarActivity** is an easy to use custom UIActivity (iOS 6+) that adds events and alarms to the iOS calendar.
 
