@@ -33,6 +33,9 @@
 
 @implementation NHCalendarActivity
 
+@synthesize activityImage = _activityImage;
+@synthesize events = _events;
+
 -(id)init
 {
     self = [super init];
